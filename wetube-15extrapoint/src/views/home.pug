@@ -1,0 +1,11 @@
+extends templates/layout
+
+block content
+    if errorMessage
+        span=errorMessage
+    form(method="POST", enctype="multipart/form-data")
+        input(type="file", accept=".txt", required, id="text", name="text")
+        input(type="submit", value="Convert")
+    each file in files
+        li
+            a(href=`read/${file}`)=file

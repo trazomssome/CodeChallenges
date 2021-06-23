@@ -1,0 +1,11 @@
+extends index
+
+block content
+  include partials/search
+  ul
+    if filteredMovie==""
+      p not found
+    else
+      each movie in filteredMovie
+        p
+          a(href=`${movie.id}`)=movie.title

@@ -1,0 +1,8 @@
+extends index
+
+block content
+  include partials/search
+  ul
+    each movie in allMovies
+      p
+        a(href=`${movie.id}`)=movie.title
